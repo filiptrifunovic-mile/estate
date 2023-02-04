@@ -8,7 +8,7 @@ const NavigationDesktop = () => {
   return (
     <Box
       color="blue.600"
-      py="2rem"
+      paddingY="2rem"
       backgroundColor="white"
       display={{ base: "none", md: "block" }}
     >
@@ -22,17 +22,19 @@ const NavigationDesktop = () => {
               </Text>
             </Box>
           </Link>
-          {navigationLinks.map((item, index) => (
-            <NavigationLink key={index} {...item} />
-          ))}
-          <Button
-            padding="1.5rem"
-            colorScheme="twitter"
-            fontSize="0.8rem"
-            fontWeight="medium"
-          >
-            CREATE LISTING
-          </Button>
+          <Flex gap="12" alignItems="center" fontWeight="medium">
+            {navigationLinks.map((item, index) => (
+              <NavigationLink key={index} {...item} />
+            ))}
+            <Button
+              padding="1.5rem"
+              colorScheme="twitter"
+              fontSize="0.8rem"
+              fontWeight="medium"
+            >
+              CREATE LISTING
+            </Button>
+          </Flex>
         </Flex>
       </Box>
     </Box>
