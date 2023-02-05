@@ -1,11 +1,5 @@
-import Footer from "@/features/common/Footer";
-import Navigation from "@/features/common/Navigation";
+import DefaultLayout from "@/features/Layouts/DefaultLayout";
 
 export default function Home() {
-  return (
-    <>
-      <Navigation />
-      <Footer />
-    </>
-  );
+  return <DefaultLayout>test</DefaultLayout>;
 }
