@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import PropertySlider from "./components/PropertySlider";
 
 const FeaturedProperties = ({ featuredProperties }) => {
   return (
@@ -28,6 +29,7 @@ const FeaturedProperties = ({ featuredProperties }) => {
         >
           A selection of our best properites
         </Text>
+        <PropertySlider featuredProperties={featuredProperties} />
       </Box>
     </Box>
   );
