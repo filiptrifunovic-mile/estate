@@ -13,9 +13,6 @@ const Partners = () => {
           padding={{ base: "2rem", sm: "3rem" }}
           filter="grayscale(1)"
           opacity="0.4"
-          // width="300px"
-          // height="300px"
-          // objectFit="contain"
         />
       ))}
     </SimpleGrid>
