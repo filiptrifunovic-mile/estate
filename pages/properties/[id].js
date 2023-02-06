@@ -1,6 +1,7 @@
 import { usePropertyFormat } from "@/features/common/Hooks/usePropertyFormat";
 import TextContentBox from "@/features/common/TextContentBox";
 import DefaultLayout from "@/features/Layouts/DefaultLayout";
+import { getProperty } from "@/features/Property/api/getProperty";
 import PropertyMatterPortEmbed from "@/features/Property/components/PropertyMatterPortEmbed";
 import PropertyStats from "@/features/Property/components/PropertyStats";
 import PropertyThumbnailSlider from "@/features/Property/components/PropertyThumbnailSlider";
@@ -19,7 +20,6 @@ import { TbMapPin } from "react-icons/tb";
 const PropertySingle = ({ property }) => {
   const {
     address,
-    coverPhoto,
     propertyType,
     price,
     title,
@@ -33,7 +33,6 @@ const PropertySingle = ({ property }) => {
     coverVideo,
     panorama,
     amenities,
-    furnished,
   } = usePropertyFormat(property);
 
   return (
@@ -106,10 +105,14 @@ const PropertySingle = ({ property }) => {
             </TextContentBox>
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 3 }}>
-            <PropertyYouTubeEmbed coverVideo={coverVideo} />
+            <TextContentBox title="Video Walkthrough">
+              <PropertyYouTubeEmbed coverVideo={coverVideo} />
+            </TextContentBox>
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 3 }}>
-            <PropertyMatterPortEmbed panorama={panorama} />
+            <TextContentBox title="3D Walkthrough">
+              <PropertyMatterPortEmbed panorama={panorama} />
+            </TextContentBox>
           </GridItem>
         </Grid>
       </Box>
@@ -120,8 +123,11 @@ const PropertySingle = ({ property }) => {
 export default PropertySingle;
 
 export async function getServerSideProps(context) {
-  const property = require("@/features/data/property");
+  const { id } = context.query;
+
+  const property = await getProperty(id);
+
   return {
-    props: { property },
+    props: { property: property },
   };
 }
