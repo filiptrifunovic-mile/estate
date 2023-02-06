@@ -10,6 +10,7 @@ const AgentCard = ({ name, image, description, title }) => {
       justifyContent="center"
       alignItems="center"
       marginBottom={{ base: "1rem", sm: "0" }}
+      textAlign="center"
     >
       <Image
         src={image}
