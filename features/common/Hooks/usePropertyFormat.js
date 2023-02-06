@@ -12,7 +12,7 @@ export const usePropertyFormat = (property) => {
   const rooms = property.rooms;
   const baths = property.baths;
   const purpose = property.purpose;
-  const sqSize = property.area.toFixed(2);
+  const sqSize = property.area.toFixed(0);
   const externalID = property.externalID;
 
   return {
