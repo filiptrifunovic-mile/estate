@@ -1,5 +1,6 @@
 import { usePropertyFormat } from "@/features/common/Hooks/usePropertyFormat";
 import DefaultLayout from "@/features/Layouts/DefaultLayout";
+import PropertyStats from "@/features/Property/components/PropertyStats";
 import PropertyThumbnailSlider from "@/features/Property/components/PropertyThumbnailSlider";
 import { Badge, Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import { TbMapPin } from "react-icons/tb";
@@ -60,6 +61,14 @@ const PropertySingle = ({ property }) => {
           </GridItem>
           <GridItem colSpan={{ base: "6", sm: "3" }}>
             <PropertyThumbnailSlider photos={photos} />
+          </GridItem>
+          <GridItem>
+            <PropertyStats
+              rooms={rooms}
+              baths={baths}
+              price={price}
+              sqSize={sqSize}
+            />
           </GridItem>
         </Grid>
       </Box>
