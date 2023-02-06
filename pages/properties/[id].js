@@ -3,7 +3,16 @@ import TextContentBox from "@/features/common/TextContentBox";
 import DefaultLayout from "@/features/Layouts/DefaultLayout";
 import PropertyStats from "@/features/Property/components/PropertyStats";
 import PropertyThumbnailSlider from "@/features/Property/components/PropertyThumbnailSlider";
-import { Badge, Box, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import PropertyYouTubeEmbed from "@/features/Property/components/PropertyYouTubeEmbed";
+import {
+  Badge,
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import { TbMapPin } from "react-icons/tb";
 
 const PropertySingle = ({ property }) => {
@@ -22,7 +31,7 @@ const PropertySingle = ({ property }) => {
     description,
     coverVideo,
     panorama,
-    amenitites,
+    amenities,
     furnished,
   } = usePropertyFormat(property);
 
@@ -80,6 +89,23 @@ const PropertySingle = ({ property }) => {
                 {description}
               </Text>
             </TextContentBox>
+            <TextContentBox title="Amenities">
+              <SimpleGrid
+                columns={{ base: 1, sm: 2 }}
+                fontWeight="light"
+                color="gray.600"
+                fontSize="1rem"
+              >
+                {amenities.length
+                  ? amenities.map((item, index) => (
+                      <Text key={index}>{item}</Text>
+                    ))
+                  : "Please contact us for more info."}
+              </SimpleGrid>
+            </TextContentBox>
+          </GridItem>
+          <GridItem>
+            <PropertyYouTubeEmbed coverVideo={coverVideo} />
           </GridItem>
         </Grid>
       </Box>
