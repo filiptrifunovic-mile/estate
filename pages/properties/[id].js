@@ -1,4 +1,5 @@
 import { usePropertyFormat } from "@/features/common/Hooks/usePropertyFormat";
+import TextContentBox from "@/features/common/TextContentBox";
 import DefaultLayout from "@/features/Layouts/DefaultLayout";
 import PropertyStats from "@/features/Property/components/PropertyStats";
 import PropertyThumbnailSlider from "@/features/Property/components/PropertyThumbnailSlider";
@@ -59,16 +60,26 @@ const PropertySingle = ({ property }) => {
               <Badge colorScheme="green">{purpose}</Badge>
             </Flex>
           </GridItem>
-          <GridItem colSpan={{ base: "6", sm: "3" }}>
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
             <PropertyThumbnailSlider photos={photos} />
           </GridItem>
-          <GridItem>
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
             <PropertyStats
               rooms={rooms}
               baths={baths}
               price={price}
               sqSize={sqSize}
             />
+            <TextContentBox title="Description">
+              <Text
+                fontWeight="light"
+                color="gray.600"
+                fontSize="1rem"
+                noOfLines="4"
+              >
+                {description}
+              </Text>
+            </TextContentBox>
           </GridItem>
         </Grid>
       </Box>
