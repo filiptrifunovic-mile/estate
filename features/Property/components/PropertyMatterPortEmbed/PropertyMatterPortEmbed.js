@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 
-const PropertyYouTubeEmbed = ({ coverVideo }) => {
+const PropertyMatterPortEmbed = ({ panorama }) => {
   const ration = (315 / 560) * 100;
 
   return (
@@ -15,12 +15,10 @@ const PropertyYouTubeEmbed = ({ coverVideo }) => {
         style={{ position: "absolute", top: 0, bottom: 0 }}
         width="100%"
         height="100%"
-        src={`https://www.youtube.com/embed/${coverVideo}`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowFullScreen"
-        allowFullScreen
+        src={panorama}
       ></iframe>
     </Box>
   );
 };
 
-export default PropertyYouTubeEmbed;
+export default PropertyMatterPortEmbed;

@@ -1,6 +1,7 @@
 import { usePropertyFormat } from "@/features/common/Hooks/usePropertyFormat";
 import TextContentBox from "@/features/common/TextContentBox";
 import DefaultLayout from "@/features/Layouts/DefaultLayout";
+import PropertyMatterPortEmbed from "@/features/Property/components/PropertyMatterPortEmbed";
 import PropertyStats from "@/features/Property/components/PropertyStats";
 import PropertyThumbnailSlider from "@/features/Property/components/PropertyThumbnailSlider";
 import PropertyYouTubeEmbed from "@/features/Property/components/PropertyYouTubeEmbed";
@@ -104,8 +105,11 @@ const PropertySingle = ({ property }) => {
               </SimpleGrid>
             </TextContentBox>
           </GridItem>
-          <GridItem>
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
             <PropertyYouTubeEmbed coverVideo={coverVideo} />
+          </GridItem>
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
+            <PropertyMatterPortEmbed panorama={panorama} />
           </GridItem>
         </Grid>
       </Box>
