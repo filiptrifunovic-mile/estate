@@ -1,4 +1,4 @@
-NextJS, Chakra UI, Axios, Swiper
+NextJS, Chakra UI, Axios, Swiper.
 
 https://filip-estate.netlify.app/
 ![1](https://user-images.githubusercontent.com/114927397/217023642-1ae50ca0-a566-425b-9138-0c3e0f84b571.jpg)
